@@ -1,2 +1,2 @@
-# Projektowanie-i-programowanie-system-w-internetowych-I-
-Projekt
+# Projektowanie-i-programowanie-system-w-internetowych-I
+Projekt :)
