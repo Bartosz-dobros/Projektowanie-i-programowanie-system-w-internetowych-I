@@ -7,21 +7,28 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="login-container">
-    <h2>Logowanie</h2>
-    <form id="loginForm">
-      <div class="form-group">
-        <label for="email">Email:</label>
-        <input type="email" id="email" />
-      </div>
-      <div class="form-group">
-        <label for="password">Hasło:</label>
-        <input type="password" id="password" />
-      </div>
-      <div id="errorMsg" class="error"></div>
-      <button type="submit" class="btn-login">Zaloguj się</button>
-    </form>
-  </div>
+
+  <header>
+    <h1><a href="index.html">🎵 Projekt PIPSIL</a></h1>
+  </header>
+
+  <main id="login-main">
+      <div class="login-container">
+        <h2>Logowanie</h2>
+        <form id="loginForm">
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="Wpisz email" />
+          </div>
+          <div class="form-group">
+            <label for="password">Hasło:</label>
+            <input type="password" id="password" placeholder="Wpisz hasło" />
+          </div>
+          <div id="errorMsg" class="error"></div>
+          <button type="submit" class="btn-login">Zaloguj się</button>
+        </form>
+    </div>
+  </main>
   <script src="login.js"></script>
 </body>
 </html>
