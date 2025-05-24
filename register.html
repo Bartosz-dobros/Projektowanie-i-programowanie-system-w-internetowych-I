@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Logowanie</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <h1><a href="index.html">🎵 Projekt PIPSIL</a></h1>
+  </header>
+
+  <div class="register-main">
+    <h2>Sign up</h2>
+    <div class="register-container">
+      <form id="registerForm">
+        <fieldset>
+          <div class="inputGroup-register">
+            <label class="label" for="username"><span>Username</span></label>
+            <input type="text" id="username" name="username" title="Nazwa użytkownika" autocomplete="off" value="" aria-required="true" placeholder="Wpisz nazwę użytkownika">
+          </div>
+          <div class="inputGroup-register">
+            <label class="label" for="email"><span>Email</span></label>
+            <input type="email" id="email" name="email" title="Adres Email" autocomplete="email" value="" aria-required="true" placeholder="Wpisz email">
+          </div>
+          <div class="inputGroup-register">
+            <label class="label" for="password"><span>Password</span></label>
+            <input type="password" id="password" name="password" title="Hasło" autocomplete="off" aria-required="true" placeholder="Wprowadź hasło">
+          </div>
+          <div class="inputGroup-register">
+            <label class="label" for="confirmPassword"><span>Confirm Password</span></label>
+            <input type="password" id="confirmPassword" name="confirmPassword" title="Potwierdzenie hasła" autocomplete="off" aria-required="true" placeholder="Potwierdź hasło">
+          </div>
+          <div class="btn-register-container">
+            <button class="btn-register" type="submit" title="Zarejestruj się"><span>Zarejestruj się</span></button>
+          </div>
+          <p id="message"></p>
+        </fieldset>
+        
+      </form>
+    </div>
+
+  </div>
+
+
+  <script src="register.js"></script>
+</body>
+</html>

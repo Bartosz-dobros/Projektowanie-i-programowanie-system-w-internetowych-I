@@ -1,7 +1,7 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #121212;
-    color: #fff;
+    color: #000000;
     text-align: center;
     padding: 20px;
 }
@@ -54,60 +54,59 @@ header h1 a {
 
 /* logowanie */
 
-#login-main {
+.login-main {
+  background: #1ed75f23;
+  border: 2px solid #1db954;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.login-main h2 {
+  color: #ccc;
+  margin-bottom: 50px;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 42px;
+}
+
+.inputGroup-login {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.register-container {
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
-.login-container {
-  background-color: #1db954;
-  padding: 2rem;
-  border-radius: 1rem;
-  box-shadow: 0 0 20px rgba(0,0,0,0.1);
-  width: 100%;
-  max-width: 400px;
-}
-
-.login-container h2 {
-  text-align: center;
-  margin-bottom: 1.5rem;
-}
-
-.form-group {
-  margin-bottom: 1rem;
-}
-
-.form-group label {
-  display: block;
-  margin-bottom: 0.5rem;
-}
-
-.form-group input {
-  width: 100%;
-  padding: 0.5rem;
-  border: 1px solid #ccc;
-  border-radius: 0.5rem;
-}
-
-.form-group input:focus {
-  border-color: linear-gradient(to left, #0a601f, #000000);
-  outline: none;
+.btn-login-container{
+  margin-top: 20px;
 }
 
 .btn-login {
-  width: 100%;
-  padding: 0.75rem;
-  background: linear-gradient(to left, #0a601f, #000000);
-  color: white;
+  display: inline-block;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-right: 75px;
+  height: 66px;
+  width: 170px;
   border: none;
-  border-radius: 0.5rem;
+  border-radius: 5px;
+  vertical-align: middle;
+  background: #1db954;
+  color: #fff;
+  font-weight: 700;
+  font-size: medium;
+  line-height: 46px;
+  text-align: center;
+  text-decoration: none;
   cursor: pointer;
-  font-size: 1rem;
+  transition: box-shadow .3s ease,background .3s ease,color .3s ease;
+  touch-action: manipulation;
 }
 
-.btn-login:hover {
-  background: linear-gradient(to right, #0a601f, #000000);
+.btn-login:hover{
+  background-color: #189b46;
 }
 
 .error {
@@ -115,4 +114,141 @@ header h1 a {
   font-size: 0.9rem;
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
-} 
+}
+
+/* rejestracja */
+
+
+input {
+  display: block;
+  height: 46px;
+  cursor: pointer;
+  border: 1px solid #e2e2e2;
+  padding: 10px;
+  background-color: #fff;
+  outline: none;
+  box-shadow: none;
+  width: 80%;
+  border-radius: 5px;
+  touch-action: manipulation;
+}
+
+label {
+  color: #fff;
+  display: block;
+  cursor: pointer;
+  margin-bottom: 5px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-weight: 700;
+  text-align: left;
+}
+
+fieldset {
+  margin-bottom: 0;
+  border: none;
+}
+
+.register-main {
+  background: #1ed75f23;
+  border: 2px solid #1db954;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.register-main h2 {
+  color: #ccc;
+  margin-bottom: 50px;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 42px;
+}
+
+.register-container {
+  column-count: 2;
+}
+
+.inputGroup-register {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.btn-register-container{
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.btn-register {
+  display: inline-block;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-right: 75px;
+  height: 66px;
+  width: 170px;
+  border: none;
+  border-radius: 5px;
+  vertical-align: middle;
+  background: #1db954;
+  color: #fff;
+  font-weight: 700;
+  font-size: medium;
+  line-height: 46px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: box-shadow .3s ease,background .3s ease,color .3s ease;
+  touch-action: manipulation;
+}
+
+.btn-register:hover{
+  background-color: #189b46;
+}
+
+/* #register-main{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.register-container {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  width: 300px;
+}
+
+.register-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.register-container form input {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.register-container form button {
+  width: 100%;
+  padding: 10px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.register-container form button:hover {
+  background: #0056b3;
+}
+
+.register-container #message {
+  margin-top: 10px;
+  font-size: 14px;
+  color: red;
+  text-align: center;
+} */
