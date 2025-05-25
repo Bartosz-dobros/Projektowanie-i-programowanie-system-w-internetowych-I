@@ -12,12 +12,19 @@ header {
 }
 
 header h1 a {
-    color: #1db954;
+    color: var(--color-1);
     text-decoration: none;
+    font-size: 52px;
+    letter-spacing: 2px;
 }
 
+li{
+  list-style: none;
+}
+
+
 #playlist button {
-    background-color: #1db954;
+    background-color: var(--color-1);
     color: white;
     border: none;
     padding: 10px 20px;
@@ -27,42 +34,273 @@ header h1 a {
 }
 
 #playlist button:hover {
-    background-color: #1ed760;
+    background-color: var(--color-2);
+}
+
+#playlist-title {
+  color: #ffffff;
 }
 
 #audioPlayer {
     margin-top: 30px;
-    width: 80%;
+    width: 100%;
 }
 
   .log-button {
-    background-color: #19b44f;
-    color: white;
+    background-color: var(--color-2);
+    color: rgb(0, 0, 0);
     padding: 10px 20px;
     border: none;
     text-decoration: none;
     border-radius: 2px;
     height: fit-content;
     font-size: 16px;
+    font-weight: 700;
     cursor: pointer;
     transition: background-color 0.3s;
   }
 
   .log-button:hover {
-    background-color: #189b46;
+    background-color: var(--color-1);
   }
+
+/* playlista utworów */
+
+.container {
+  max-width: 1400px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.library-list {
+  width: 400px;
+  margin-right: 10px;
+  border-top: 2px solid #ffffff;
+  border-right: 2px solid #ffffff;
+}
+
+.library-list h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: var(--color-1);
+}
+
+.library-list ul {
+  list-style: none;
+  padding: 10px;
+  columns: 2;
+  column-gap: 5px;
+  max-height: 400px;
+  overflow-y: auto;
+  padding-right: 1rem;
+  list-style-type: none;
+}
+
+.library-list li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #fff;
+  background-color: #1e1e1e;
+  color: #fff;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  font-size: 24px;
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+  break-inside: avoid;
+  transition: background 0.3s;
+}
+
+.library-list li:hover {
+  background-color: #2a2a2a;
+  border: 2px solid  var(--color-1);
+  color:  var(--color-1);
+}
+
+.library-list li.active {
+  background-color: #2a2a2a;
+  border: 2px solid  var(--color-2);
+  color:  var(--color-2);
+}
+
+.main-section {
+  flex-grow: 1;
+  background-color: transparent;
+  border-top: 2px solid  var(--color-1);
+  border-left: 2px solid  var(--color-1);
+  color:  var(--color-1);
+  padding: 10px 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.main-section h3 {
+  font-size: 36px;
+}
+
+.main-section p {
+  font-size:  19px;
+  color: #ffffff;
+}
+
+.main-section .author {
+  color:  var(--color-1);
+}
+
+.playlist-section {
+  border-top: 2px solid  var(--color-1);
+  border-left: 2px solid  var(--color-1);
+  flex-grow: 1;
+  max-height: 500px;
+  overflow-y: auto;
+  padding: 5px 10px;
+}
+
+.playlist-section h1 {
+  margin: 30px 0 10px;
+}
+
+.track-header {
+  display: flex;
+  align-items: center;
+  color: var(--color-2);
+  font-weight: 500;
+  font-size: 0.9rem;
+  padding: 5px 10px;
+  margin-bottom: 10px;
+}
+
+.track-header .track-number {
+  width: 40px;
+  margin-right: 15px;
+  text-align: center;
+}
+
+.track-header .track-number-header {
+  border: none;
+  background-color: transparent;
+  color: var(--color-2);
+}
+
+.track-header .track-info {
+  flex-grow: 1;
+}
+
+.track-header .track-action {
+  width: 40px;
+  text-align: center;
+}
+
+.track-header .track-rate {
+  font-size: 18px;
+  color: var(--color-2);
+}
+
+.track-header .track-rate:hover {
+  color: var(--color-2);
+}
+
+.track {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  margin-bottom: 15px;
+  padding: 10px 15px;
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+
+.track:hover {
+  background-color: #2a2a2a;
+}
+
+.track-number {
+  width: 40px;
+  height: 40px;
+  background-color: #000000;
+  border: 2px solid rgb(255, 255, 255);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  margin-right: 15px;
+  color: #ffffff;
+  flex-shrink: 0;
+  transition: all 0.3s;
+}
+
+.track-info {
+  flex-grow: 1;
+}
+
+.track-info h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #f9f9f9;
+}
+
+.track-info p {
+  margin: 2px 0 0;
+  color: #cecece;
+}
+
+.play-button {
+  background: none;
+  border: none;
+  color: #ffffff;
+  padding: 6px 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.track.active .track-number {
+  border: 2px solid  var(--color-1);
+  background-color: #000000;
+  color:  var(--color-1);
+}
+
+.track.active .play-button {
+  color:  var(--color-1);
+}
+
+.track.active {
+  border: 2px solid  var(--color-1);
+}
+
+.track.active .track-info h3 {
+  color:  var(--color-1);
+}
+
+.track.active .track-info p {
+  color:  var(--color-2);
+}
+
+.audioPlayer {
+  position: fixed;
+  bottom: 0; 
+  left: 0;
+}
 
 /* logowanie */
 
 .login-main {
-  background: #1ed75f23;
-  border: 2px solid #1db954;
+  background: transparent;
+  border: 2px solid var(--color-1);
   border-radius: 5px;
   padding: 20px;
+  width: 800px;
+  margin: auto;
 }
 
 .login-main h2 {
-  color: #ccc;
+  color: var(--color-1);
   margin-bottom: 50px;
   font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   font-size: 42px;
@@ -93,8 +331,8 @@ header h1 a {
   border: none;
   border-radius: 5px;
   vertical-align: middle;
-  background: #1db954;
-  color: #fff;
+  background: var(--color-1);
+  color: #000000;
   font-weight: 700;
   font-size: medium;
   line-height: 46px;
@@ -106,7 +344,7 @@ header h1 a {
 }
 
 .btn-login:hover{
-  background-color: #189b46;
+  background-color: var(--color-2);;
 }
 
 .error {
@@ -123,9 +361,10 @@ input {
   display: block;
   height: 46px;
   cursor: pointer;
-  border: 1px solid #e2e2e2;
+  border: 1px solid var(--color-1);
   padding: 10px;
-  background-color: #fff;
+  background-color: transparent;
+  color: var(--color-1);
   outline: none;
   box-shadow: none;
   width: 80%;
@@ -134,7 +373,7 @@ input {
 }
 
 label {
-  color: #fff;
+  color: var(--color-2);;
   display: block;
   cursor: pointer;
   margin-bottom: 5px;
@@ -146,24 +385,24 @@ label {
 fieldset {
   margin-bottom: 0;
   border: none;
+  columns: 2;
 }
 
 .register-main {
-  background: #1ed75f23;
-  border: 2px solid #1db954;
+  background: transparent;
+  border: 2px solid var(--color-1);
   border-radius: 5px;
   padding: 20px;
+  width: 800px;
+  height: 500px;
+  margin: auto;
 }
 
 .register-main h2 {
-  color: #ccc;
+  color: var(--color-1);
   margin-bottom: 50px;
   font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   font-size: 42px;
-}
-
-.register-container {
-  column-count: 2;
 }
 
 .inputGroup-register {
@@ -188,8 +427,8 @@ fieldset {
   border: none;
   border-radius: 5px;
   vertical-align: middle;
-  background: #1db954;
-  color: #fff;
+  background: var(--color-1);
+  color: #000000;
   font-weight: 700;
   font-size: medium;
   line-height: 46px;
@@ -201,54 +440,54 @@ fieldset {
 }
 
 .btn-register:hover{
-  background-color: #189b46;
+  background-color: var(--color-2);
 }
 
-/* #register-main{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+/* zmiana koloru */
 
-.register-container {
-  background: white;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  width: 300px;
-}
-
-.register-container h2 {
+.color-selector {
+  margin-left: 10px;
+  appearance: none;
+  border: 3px solid var(--color-2);
+  background-color: var(--color-1);
+  height: 50px;
+  border-radius: 50%;
+  font-weight: 700;
   text-align: center;
-  margin-bottom: 20px;
 }
 
-.register-container form input {
-  width: 100%;
-  padding: 10px;
-  margin: 8px 0;
-  border: 1px solid #ccc;
-  border-radius: 6px;
+.pink-color {
+  background-color: #ff12db;
 }
 
-.register-container form button {
-  width: 100%;
-  padding: 10px;
-  background: #007bff;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  margin-top: 10px;
+.blue-color {
+  background-color: #1269ff;
 }
 
-.register-container form button:hover {
-  background: #0056b3;
+.orange-color {
+  background-color: #ff7912;
 }
 
-.register-container #message {
-  margin-top: 10px;
-  font-size: 14px;
-  color: red;
-  text-align: center;
-} */
+.yellow-color {
+  background-color: #fffb12;
+}
+
+.theme-pink {
+  --color-1: #ff12db;
+  --color-2: #b00e98;
+}
+
+.theme-blue {
+  --color-1: #1269ff;
+  --color-2: #0f4bb3;
+}
+
+.theme-orange {
+  --color-1: #ff7912;
+  --color-2: #b0550f;
+}
+
+.theme-yellow {
+  --color-1: #fffb12;
+  --color-2: #adab0e;
+}

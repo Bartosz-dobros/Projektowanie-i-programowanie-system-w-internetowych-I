@@ -3,13 +3,14 @@ document.getElementById("loginForm").addEventListener("submit", function (e) {
 
   const email = document.getElementById("email").value.trim();
   const password = document.getElementById("password").value.trim();
-  const errorMsg = document.getElementById("errorMsg");
+  const message = document.getElementById("message");
 
   if (!email || !password) {
-    errorMsg.textContent = "Wprowadź email i hasło.";
+    message.style.color = 'var(--color-2)';
+    message.textContent = "Nie zostały wypełnione wszystkie pola!";
     return;
   }
 
-  errorMsg.textContent = "";
-  alert("Zalogowano pomyślnie!");
+  message.style.color = 'var(--color-1)';
+  message.textContent = "Logowanie zakończone sukcesem!";
 });

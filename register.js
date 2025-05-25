@@ -7,17 +7,24 @@ document.getElementById('registerForm').addEventListener('submit', function(e) {
   const confirmPassword = document.getElementById('confirmPassword').value;
   const message = document.getElementById('message');
 
+   if (!username || !email || !password || !confirmPassword) {
+    message.style.color = 'var(--color-2)';
+    message.textContent = "Nie zostały wypełnione wszystkie pola!";
+    return;
+  }
+
   if (password.length < 6) {
-    message.textContent = "Hasło musi mieć co najmniej 6 znaków.";
+    message.style.color = 'var(--color-2)';
+    message.textContent = "Hasło musi mieć co najmniej 6 znaków!";
     return;
   }
 
   if (password !== confirmPassword) {
-    message.textContent = "Hasła nie są zgodne.";
+    message.style.color = 'var(--color-2)';
+    message.textContent = "Hasła nie są zgodne!";
     return;
   }
 
-  message.style.color = "green";
+  message.style.color = 'var(--color-1)';
   message.textContent = "Rejestracja zakończona sukcesem!";
-  // Tu możesz wysłać dane na serwer lub je przetworzyć
 });

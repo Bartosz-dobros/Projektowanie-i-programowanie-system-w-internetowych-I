@@ -2,32 +2,72 @@
 <html lang="pl">
 <head>
   <meta charset="UTF-8">
-  <title>Moja Muzyka</title>
+  <title>🎵 MUSICAL REST</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header>
-  <h1><a href="#">🎵 Projekt PIPSIL</a></h1>
+  <h1><a href="index.html">🎵 MUSICAL REST</a></h1>
   <div class="btns">
     <a href="login.html" class="log-button">Logowanie</a>
     <a href="register.html" class="log-button">Rejestracja</a>
+    <select class="color-selector" name="color" id="color">
+      <option class="pink-color" value="pink">pink</option>
+      <option class="blue-color" value="blue">blue</option>
+      <option class="orange-color" value="orange">orange</option>
+      <option class="yellow-color" value="yellow">yellow</option>
+    </select>
   </div>
   
 </header>
 
 <main>
-  <div id="playlist">
-    <button onclick="playTrack('music/track1.mp3')">Track 1</button>
-    <button onclick="playTrack('music/track2.mp3')">Track 2</button>
+
+  <div id="container" class="container">
+
+    <div class="library-list">
+      <h2>Twoja biblioteka</h2>
+      <ul>
+        <li data-library="rap">Rap</li>
+        <li data-library="jazz">Jazz</li>
+        <li data-library="pop">Pop</li>
+        <li data-library="opera">Opera</li>
+        <li data-library="ballad">Ballad</li>
+        <li data-library="rock">Rock</li>
+      </ul>
+    </div>
+
+     <div class="main-section">
+        <h3>Witamy w Musical Rest!</h3>
+        <p>Ta strona umożliwia wysłuchanie muzyki, korzystając z dostępnych playlist Twojej Biblioteki. Witryna posiada również możliwość rejestracji i logowania, a także zmiany motywu strony.</p>
+        <p >Projekt autorstwa: <span class="author">Bartosz Dobroś, Maksym Wilk, Michał Żmuda</span></p>
+     </div>
+
+    <div class="playlist-section" style="display: none;">
+      <h1 id="playlist-title"></h1>
+
+      <div class="track-header">
+        <div class="track-action">▶</div>
+        <div class="track-number track-number-header">#</div>
+        <div class="track-info"><span>Track</span></div>
+      </div>
+
+      <div id="playlist-container">
+      </div>
+    </div>
+
   </div>
 
+
   <div id="player">
-    <audio id="audioPlayer" controls controlsList="nodownload">
+    <audio class="audioPlayer" id="audioPlayer" controls controlsList="nodownload">
       Twoja przeglądarka nie obsługuje elementu audio.
     </audio>
   </div>
 </main>
 
 <script src="script.js"></script>
+<script src="color-change.js"></script>
+<script src="track-rating.js"></script>
 </body>
 </html>
