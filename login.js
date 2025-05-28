@@ -1,16 +1,14 @@
-document.getElementById("loginForm").addEventListener("submit", function (e) {
-  e.preventDefault();
+document.getElementById('loginForm').addEventListener('submit', function(event) {
+  event.preventDefault();
+  const username = document.getElementById('loginUsername').value;
+  const password = document.getElementById('loginPassword').value;
 
-  const email = document.getElementById("email").value.trim();
-  const password = document.getElementById("password").value.trim();
-  const message = document.getElementById("message");
-
-  if (!email || !password) {
-    message.style.color = 'var(--color-2)';
-    message.textContent = "Nie zostały wypełnione wszystkie pola!";
-    return;
+  // Check if username and password are valid
+  if (username === 'admin' && password === 'password') {
+    // Successful login
+    alert('Login Successful');
+  } else {
+    // Invalid login
+    alert('Invalid username or password');
   }
-
-  message.style.color = 'var(--color-1)';
-  message.textContent = "Logowanie zakończone sukcesem!";
 });

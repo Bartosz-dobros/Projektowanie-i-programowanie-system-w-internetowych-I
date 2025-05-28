@@ -7,45 +7,41 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-  <header>
-    <h1><a href="index.html">🎵 MUSICAL REST</a></h1>
-  </header>
-
-  <div class="register-main">
-    <h2>Sign up</h2>
-    <div class="register-container">
-      <form id="registerForm">
-        <fieldset>
-          <div class="inputGroup-register">
-            <label class="label" for="username"><span>Username</span></label>
-            <input type="text" id="username" name="username" title="Nazwa użytkownika" autocomplete="off" value="" aria-required="true" placeholder="Wpisz nazwę użytkownika">
-          </div>
-          <div class="inputGroup-register">
-            <label class="label" for="email"><span>Email</span></label>
-            <input type="email" id="email" name="email" title="Adres Email" autocomplete="email" value="" aria-required="true" placeholder="Wpisz email">
-          </div>
-          <div class="inputGroup-register">
-            <label class="label" for="password"><span>Password</span></label>
-            <input type="password" id="password" name="password" title="Hasło" autocomplete="off" aria-required="true" placeholder="Wprowadź hasło">
-          </div>
-          <div class="inputGroup-register">
-            <label class="label" for="confirmPassword"><span>Confirm Password</span></label>
-            <input type="password" id="confirmPassword" name="confirmPassword" title="Potwierdzenie hasła" autocomplete="off" aria-required="true" placeholder="Potwierdź hasło">
-          </div>
-          
-        </fieldset>
-        <div class="btn-register-container">
-            <button class="btn-register" type="submit" title="Zarejestruj się"><span>Zarejestruj się</span></button>
-          </div>
-          <p id="message"></p>
-      </form>
+    <div class="page-header">
+      <a href="index.html"><h1>Music Website</h1></a>
     </div>
 
-  </div>
-
+    <div class="form-container-main">
+      <div class="form-container">
+        <form class="login-form" id="registerForm">
+          <div class="form-section">
+            <h2>Register</h2>
+          </div>
+          <div class="form-section">
+              <div class="form-section-part">
+                <label class="login-label" for="regUsername">Username</label>
+                <input class="login-input" type="text" id="regUsername">
+              </div>
+              <div class="form-section-part">
+                <label class="login-label" for="regEmail">Email</label>
+                <input class="login-input" type="email" id="regEmail">
+              </div>
+              <div class="form-section-part">
+                <label class="login-label" for="regPassword">Password</label>
+                <input class="login-input" type="password" id="regPassword">
+              </div>
+              <div class="form-section-part">
+                <label class="login-label" for="regConfirmPassword">Confirm Password</label>
+                <input class="login-input" type="password" id="regConfirmPassword">
+              </div>
+          </div>
+          <div class="form-section">
+            <button class="login-button" type="submit">Sign Up</button>
+          </div>
+        </form>
+      </div>
+    </div>
 
   <script src="register.js"></script>
-  <script src="color-change.js"></script>
 </body>
 </html>

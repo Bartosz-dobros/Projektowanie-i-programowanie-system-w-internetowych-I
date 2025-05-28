@@ -2,72 +2,34 @@
 <html lang="pl">
 <head>
   <meta charset="UTF-8">
-  <title>🎵 MUSICAL REST</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music Website</title>
   <link rel="stylesheet" href="style.css">
+  <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
-<header>
-  <h1><a href="index.html">🎵 MUSICAL REST</a></h1>
-  <div class="btns">
-    <a href="login.html" class="log-button">Logowanie</a>
-    <a href="register.html" class="log-button">Rejestracja</a>
-    <select class="color-selector" name="color" id="color">
-      <option class="pink-color" value="pink">pink</option>
-      <option class="blue-color" value="blue">blue</option>
-      <option class="orange-color" value="orange">orange</option>
-      <option class="yellow-color" value="yellow">yellow</option>
-    </select>
-  </div>
-  
-</header>
-
-<main>
-
-  <div id="container" class="container">
-
-    <div class="library-list">
-      <h2>Twoja biblioteka</h2>
-      <ul>
-        <li data-library="rap">Rap</li>
-        <li data-library="jazz">Jazz</li>
-        <li data-library="pop">Pop</li>
-        <li data-library="opera">Opera</li>
-        <li data-library="ballad">Ballad</li>
-        <li data-library="rock">Rock</li>
-      </ul>
-    </div>
-
-     <div class="main-section">
-        <h3>Witamy w Musical Rest!</h3>
-        <p>Ta strona umożliwia wysłuchanie muzyki, korzystając z dostępnych playlist Twojej Biblioteki. Witryna posiada również możliwość rejestracji i logowania, a także zmiany motywu strony.</p>
-        <p >Projekt autorstwa: <span class="author">Bartosz Dobroś, Maksym Wilk, Michał Żmuda</span></p>
-     </div>
-
-    <div class="playlist-section" style="display: none;">
-      <h1 id="playlist-title"></h1>
-
-      <div class="track-header">
-        <div class="track-action">▶</div>
-        <div class="track-number track-number-header">#</div>
-        <div class="track-info"><span>Track</span></div>
+  <header>
+      <nav class="navbar">
+          <div class="page-header">
+            <a href="index.html"><h1>Music Website</h1></a>
+          </div>
+          <div class="hamburger-menu">
+            <i class="bx bx-menu sidebarOpen"></i>
+          </div>
+          <div class="nav-menu hide">
+              <a href="#">Home</a>
+              <a href="#">Library</a>
+              <a href="login.html">Sign In</a>
+              <a href="register.html">Sign Up</a>
+          </div>
+      </nav>
+      <div class="search-bar">
+        <input id="search" type="search" placeholder="Szukaj" autocomplete="off"/>
+    
       </div>
+  </header>
+  <script src="script.js"></script>
 
-      <div id="playlist-container">
-      </div>
-    </div>
-
-  </div>
-
-
-  <div id="player">
-    <audio class="audioPlayer" id="audioPlayer" controls controlsList="nodownload">
-      Twoja przeglądarka nie obsługuje elementu audio.
-    </audio>
-  </div>
-</main>
-
-<script src="script.js"></script>
-<script src="color-change.js"></script>
-<script src="track-rating.js"></script>
 </body>
 </html>

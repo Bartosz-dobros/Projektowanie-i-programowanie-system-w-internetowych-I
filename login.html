@@ -8,35 +8,33 @@
 </head>
 <body>
 
-  <header>
-    <h1><a href="index.html">🎵 MUSICAL REST</a></h1>
+  <header class="page-header">
+    <a href="index.html"><h1>Music Website</h1></a>
   </header>
 
-    <div class="login-main">
-    <h2>Sign in</h2>
-    <div class="login-container">
-      <form id="loginForm">
-        <fieldset>
-          <div class="inputGroup-login">
-            <label class="label" for="email"><span>Email</span></label>
-            <input type="email" id="email" name="email" title="Adres Email" autocomplete="email" value="" aria-required="true" placeholder="Wpisz email">
+  <div class="form-container-main">
+    <div class="form-container">
+      <form class="login-form" id="loginForm">
+        <div class="form-section">
+          <h2>Login</h2>
+        </div>
+        <div class="form-section">
+          <div class="form-section-part">
+            <label class="login-label" for="loginUsername">Username</label>
+            <input class="login-input" type="text" id="loginUsername">
           </div>
-          <div class="inputGroup-login">
-            <label class="label" for="password"><span>Password</span></label>
-            <input type="password" id="password" name="password" title="Hasło" autocomplete="off" aria-required="true" placeholder="Wprowadź hasło">
+          <div class="form-section-part">
+            <label class="login-label" for="loginPassword">Password</label>
+            <input class="login-input" type="password" id="loginPassword">
           </div>
-          
-        </fieldset>
-        <div class="btn-login-container">
-            <button class="btn-login" type="submit" title="Zaloguj się"><span>Zaloguj się</span></button>
-          </div>
-          <p id="message"></p>
+        </div>
+        <div class="form-section">
+          <button class="login-button" type="submit">Sign In</button>
+        </div>
       </form>
     </div>
-
   </div>
 
   <script src="login.js"></script>
-  <script src="color-change.js"></script>
 </body>
 </html>
