@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    /* transition: all 0.4s; */
+}
+
+:root {
+  --body-color: #baa4e7;
+  --nav-color: #6a2be7;
+  --side-nav: #1d0a43;
+  --text-color: #fff;
+  --search-bar: #250d54;
+  --search-text: #0d0221;
+}
+
+body{
+    font-family: sans-serif;
+    background-color: var(--side-nav);
+    height: 100%;
+    width: 100%;
+}
+
+main{
+  display: flex;
+  justify-content: center;
+}
+
+/* playlista każda */
+
+.library-main {
+  width: 95%;
+  height: fit-content;
+  padding: 25px;
+  margin: 10px;
+  display: block;
+}
+
+.library-main .library-content {
+  margin-top: 10px;
+  width: 100%;
+  height: 500px;
+  display: flex;
+  
+}
+
+.library-content .library-header {
+  width: 30%;
+}
+
+.library-header {
+  position: relative;
+}
+
+.library-header .library-title{
+  font-size: 27px;
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  background-color: #6a2be7;
+  color: #000000;
+  font-weight: 700;
+  font-size: 29px;
+  text-transform: uppercase;
+  width: 50%;
+  padding: 5px;
+}
+
+.library-header .library-image{
+ width: 100%;
+ height: 100%; 
+ border-bottom-left-radius: 5px;
+ border-top-left-radius: 5px;
+}
+
+.library-content .library-container {
+  flex: 1;
+}
+
+.library-container .library-list{
+  height: 100%;
+  background-color: var(--search-text);
+  color: var(--text-color);
+  padding: 10px;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+/* ... */
+
+/* bilbioteki i listy */
+
+.library-list .library-grid {
+  display: grid;
+  height: 450px;
+  grid-template-columns: 25% 25% 25% 25%;
+  padding: 25px;
+  margin: 15px;
+  overflow-y: scroll;
+}
+
+.library-item {
+  padding: 5px;
+  margin: 5px;
+  width: 215px;
+  height: 215px;
+  background-color: var(--body-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.library-item .library-item-child{
+  width: 200px;
+  height: 200px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--side-nav);
+}
+
+.library-item-child h4 {
+  color: var(--text-color);
+  margin: 5px;
+}
+
+.library-item-child img {
+  width: 120px;
+  height: 160px;
+  border-radius: 5px;
+  transition: width 0.55s ease, height 0.55 ease;
+}
+
+.library-item-child:hover {
+  position: relative;
+}
+
+.library-item-child img:hover {
+  width: 200px;
+  height: 200px;
+  border-bottom-right-radius: 0px;
+  border-top-right-radius: 0px;
+  position: absolute;
+}
+
+@media screen and (max-width: 1100px) {
+  .library-main .library-content {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .library-content .library-header,
+  .library-content .library-container {
+    width: 100%;
+  }
+
+  /* Zmienione border-radius dla układu pionowego */
+  .library-header .library-image {
+    width: 100%;
+    height: 250px; /* nowa wysokość obrazka */
+    object-fit: cover; /* ważne: obrazek się przytnie zamiast rozciągać */
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 0;
+  }
+
+  .library-header .library-title {
+    font-size: 24px;
+    width: auto;
+    left: 20px;
+    bottom: 20px;
+    padding: 8px 12px;
+    background-color: #6a2be7cc; /* półprzezroczyste tło dla lepszej widoczności */
+    color: #fff;
+  }
+
+  .library-container .library-list {
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding: 15px;
+  }
+
+  /* Dostosowanie wysokości grida */
+  .library-list .library-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    height: auto;
+    overflow-y: visible;
+    padding: 10px;
+    margin: 10px 0;
+  }
+
+  .library-item {
+    width: 100%;
+    max-width: 215px;
+    height: auto;
+  }
+
+  .library-item .library-item-child {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+  }
+
+  .library-item-child img {
+    width: 100%;
+    max-width: 120px;
+    height: auto;
+  }
+
+  .library-item-child img:hover {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+  }
+}
