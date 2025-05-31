@@ -1,13 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="test.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test</title>
+  <link rel="stylesheet" href="test.css">
+  <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
-    <main>
+  <header>
+      <nav class="navbar">
+          <div class="page-header">
+            <a href="test.html"><h1>Test</h1></a>
+          </div>
+          <div class="hamburger-menu">
+            <i class="bx bx-menu sidebarOpen"></i>
+          </div>
+          <div class="nav-menu hide">
+              <a href="#" id="view-home">Home</a>
+              <a href="#" id="view-library">Library</a>
+              <a href="#" id="view-favorite">My Favorite</a>
+              <a href="test2.html">Sign In</a>
+              <a href="test3.html">Sign Up</a>
+          </div>
+      </nav>
+  </header>
+  <main>
+
+
+    <div class="home-main">
+      <div class="home-content">
+        <h2 class="home-title">Witajcie w Music Website!</h2>
+        <p class="home-text">Ta strona umożliwia słuchanie muzyki o każdej porze dnia. Utwory dostępnie są w różnych playlistach naszej biblioteki. Można również dodawaniać wybrane piosenki do playlisty ulubionych, jak i usuwać je stamtąd. Zachęcamy do zalogowania się, a jeśli nie masz jeszcze konta to do rejestracji. Strona autorstwa: Maksym Wilk, Bartosz Dobroś, Michał Żmuda.</p>
+      </div>
+    </div>
         <div class="library-main">
             <div class="library-content">
                 <div class="library-header">
@@ -20,57 +47,57 @@
                                 <div class="library-item" data-track-id="P1">
                                     
                                     <div class="library-item-child">
-                                        <h4>Playlista A</h4>
+                                        <h4>Rap</h4>
                                         <img src="pic/playlist1.png" alt="" style="width: 100%">
                                     </div>
                                 </div>
                                 <div class="library-item" data-track-id="P2">
                                     
                                     <div class="library-item-child">
-                                        <h4>Playlista B</h4>
+                                        <h4>Jazz</h4>
                                         <img src="pic/playlist2.png" alt="" style="width: 100%">
                                     </div>
                                 </div>
                                 <div class="library-item" data-track-id="P3">
                                     
                                     <div class="library-item-child">
-                                        <h4>Playlista C</h4>
+                                        <h4>Pop</h4>
                                         <img src="pic/playlist3.png" alt="" style="width: 100%">
                                     </div>
                                 </div>
                                 <div class="library-item" data-track-id="P4">
                                     
                                     <div class="library-item-child">
-                                        <h4>Playlista D</h4>
+                                        <h4>Opera</h4>
                                         <img src="pic/playlist4.png" alt="" style="width: 100%">
                                     </div>
                                 </div>
                                 <div class="library-item" data-track-id="P5">
                                     
                                     <div class="library-item-child">
-                                        <h4>Playlista E</h4>
-                                        <img src="pic/playlist1.png" alt="" style="width: 100%">
+                                        <h4>Ballad</h4>
+                                        <img src="pic/playlist5.png" alt="" style="width: 100%">
                                     </div>
                                 </div>
                                 <div class="library-item" data-track-id="P6">
                                     
                                     <div class="library-item-child">
-                                        <h4>Playlista F</h4>
-                                        <img src="pic/playlist2.png" alt="" style="width: 100%">
+                                        <h4>Rock</h4>
+                                        <img src="pic/playlist6.png" alt="" style="width: 100%">
                                     </div>
                                 </div>
                                 <div class="library-item" data-track-id="P7">
                                     
                                     <div class="library-item-child">
-                                        <h4>Playlista G</h4>
-                                        <img src="pic/playlist3.png" alt="" style="width: 100%">
+                                        <h4>Country</h4>
+                                        <img src="pic/playlist7.png" alt="" style="width: 100%">
                                     </div>
                                 </div>
                                 <div class="library-item" data-track-id="P8">
                                     
                                     <div class="library-item-child">
-                                        <h4>Playlista H</h4>
-                                        <img src="pic/playlist4.png" alt="" style="width: 100%">
+                                        <h4>Disco</h4>
+                                        <img src="pic/playlist8.png" alt="" style="width: 100%">
                                     </div>
                                 </div>
                         
@@ -79,7 +106,37 @@
                 </div>
             </div>
         </div>
-    </main>
-    <script src="test.js"></script>
+
+    <div class="playlist-main">
+      <div class="playlist-content">
+        <div class="playlist-header"></div>
+        <div class="track-list-container">
+          <ul class="track-list"></ul>
+        </div>
+      </div>
+    </div>
+          
+          
+      <div class="favorite-main">
+        <div class="playlist-favorite-content">
+          <div class="playlist-favorite-header">
+            <div class="playlist-favorite-title">Moja Playlista</div>
+            <img class="playlist-favorite-image" src="pic/favoritePlaylist.png" alt="">
+          </div>
+          <div class="track-favorite-list-container">
+            <ul class="track-favorite-list"></ul>
+          </div>
+        </div>
+      </div>
+
+    <div id="player">
+      <audio class="audioPlayer" id="audioPlayer" controls controlsList="nodownload">
+        Twoja przeglądarka nie obsługuje elementu audio.
+      </audio>
+    </div>
+  </main>
+
+  <script src="test.js"></script>
+
 </body>
 </html>
