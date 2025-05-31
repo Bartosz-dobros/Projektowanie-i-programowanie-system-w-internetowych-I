@@ -210,6 +210,7 @@ a{
 
 .library-header {
   position: relative;
+  height: fit-content;
 }
 
 .library-header .library-title{
@@ -278,30 +279,30 @@ a{
   flex-direction: column;
   align-items: center;
   background-color: var(--side-nav);
-}
-
-.library-item-child h4 {
-  color: var(--text-color);
-  margin: 5px;
-}
-
-.library-item-child img {
-  width: 120px;
-  height: 160px;
-  border-radius: 5px;
-  transition: width 0.55s ease, height 0.55 ease;
-}
-
-.library-item-child:hover {
   position: relative;
 }
 
-.library-item-child img:hover {
-  width: 200px;
-  height: 200px;
-  border-bottom-right-radius: 0px;
-  border-top-right-radius: 0px;
+.library-item-child h4 {
+  top: -15px;
+  margin: 5px;
+  padding: 5px;
+  font-size: 19px;
+  background-color: #6a2be7cc;
+  color: #fff;
   position: absolute;
+  z-index: 2;
+}
+
+.library-item-child img {
+  transform: scale(0.8);
+  border-radius: 5px;
+  transition: width 0.55s ease, height 0.55 ease;
+  position: absolute;
+  z-index: 1;
+}
+
+.library-item-child img:hover {
+  transform: scale(1);
 }
 
 @media screen and (max-width: 1500px) {
@@ -359,7 +360,7 @@ a{
   .library-item .library-item-child {
     width: 100%;
     max-width: 200px;
-    height: auto;
+    height: 155px;
   }
 
   .library-item-child img {
@@ -570,3 +571,49 @@ a{
   background-color: #6a2be7;
 }
 
+@media screen and (max-width: 1000px) {
+  .playlist-main .playlist-content, .favorite-main .playlist-favorite-content {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .playlist-content .playlist-header, .playlist-favorite-content .playlist-favorite-header,
+  .playlist-content .track-list-container, .playlist-favorite-content .track-favorite-list-container {
+    width: 100%;
+  }
+
+  .playlist-header .playlist-image, 
+  .playlist-favorite-header .playlist-favorite-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 0;
+  }
+
+  .playlist-header .playlist-title, 
+  .playlist-favorite-header .playlist-favorite-title {
+    font-size: 24px;
+    width: auto;
+    left: 20px;
+    bottom: 20px;
+    padding: 8px 12px;
+  }
+
+  .track-list-container .track-list, .playlist-favorite-content .track-favorite-list{
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding: 15px;
+  }
+
+
+}
+
+.audioPlayer {
+  position: fixed;
+  bottom: 0; 
+  left: 0;
+  width: 100%;
+}

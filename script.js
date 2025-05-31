@@ -38,11 +38,9 @@ const playlists = {
       { id: "Opera5", title: "Can't Hold Us", artist: "Macklemore & Ryan Lewis", music: 'music/track1.mp3'}
     ]
   },
-
-
   P5: {
     title: "Ballad",
-    cover: "pic/playlist1.png",
+    cover: "pic/playlist5.png",
     tracks: [
       { id: "Ballad1", title: "Take Five", artist: "Dave Brubeck", music: 'music/track1.mp3'},
       { id: "Ballad2", title: "So What", artist: "Miles Davis", music: 'music/track2.mp3'},
@@ -52,10 +50,28 @@ const playlists = {
   },
     P6: {
     title: "Rock",
-    cover: "pic/playlist2.png",
+    cover: "pic/playlist6.png",
     tracks: [
       { id: "Rock1", title: "Take Five", artist: "Dave Brubeck", music: 'music/track1.mp3'},
       { id: "Rock2", title: "So What", artist: "Miles Davis", music: 'music/track2.mp3'}
+    ]
+  },
+  P7: {
+    title: "Country",
+    cover: "pic/playlist7.png",
+    tracks: [
+      { id: "Country1", title: "Take Five", artist: "Dave Brubeck", music: 'music/track1.mp3'},
+      { id: "Country2", title: "So What", artist: "Miles Davis", music: 'music/track2.mp3'},
+      { id: "Country3", title: "Blue in Green", artist: "Bill Evans", music: 'music/track1.mp3'},
+      { id: "Country4", title: "Fix You", artist: "Coldplay", music: 'music/track2.mp3'}
+    ]
+  },
+    P8: {
+    title: "Disco",
+    cover: "pic/playlist8.png",
+    tracks: [
+      { id: "Disco1", title: "Take Five", artist: "Dave Brubeck", music: 'music/track1.mp3'},
+      { id: "Disco2", title: "So What", artist: "Miles Davis", music: 'music/track2.mp3'}
     ]
   }
 };
@@ -176,3 +192,11 @@ childPlaylist.forEach(cp => {
     });
   };
 });
+
+function playTrack(src) {
+    const player = document.getElementById("audioPlayer");
+    player.src = src;
+    player.play();
+
+
+}
