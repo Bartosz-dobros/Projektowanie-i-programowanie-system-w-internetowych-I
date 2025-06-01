@@ -29,21 +29,90 @@
   <main>
 
 
-    <div class="home-main">
-      <div class="home-content">
-        <h2 class="home-title">Witajcie w Music Website!</h2>
-        <p class="home-text">Ta strona umożliwia słuchanie muzyki o każdej porze dnia. Utwory dostępnie są w różnych playlistach naszej biblioteki. Można również dodawaniać wybrane piosenki do playlisty ulubionych, jak i usuwać je stamtąd. Zachęcamy do zalogowania się, a jeśli nie masz jeszcze konta to do rejestracji. Strona autorstwa: Maksym Wilk, Bartosz Dobroś, Michał Żmuda.</p>
+    <div class="website-main" id="home-main">
+      <div class="website-content">
+        <div class="website-header">
+          <div class="website-title">Welcome</div>
+          <img class="website-image" src="pic/homeSection.png" alt="">
+        </div>
+        <div class="website-container">
+          <div class="home-container-welcome">
+            <h2>Witajcie w Music Website!</h2>
+            <p>Ta strona umożliwia słuchanie muzyki o każdej porze dnia. 
+              Utwory dostępnie są w różnych playlistach naszej biblioteki. 
+              Można również dodawaniać wybrane piosenki do playlisty ulubionych, jak i usuwać je stamtąd. 
+              Zachęcamy do zalogowania się, a jeśli nie masz jeszcze konta to do rejestracji. 
+              </p>
+            <p class="authors">Strona autorstwa: Maksym Wilk, Bartosz Dobroś, Michał Żmuda. &copy; Wszelkie prawa zastrzeżone</p>
+          </div>
+        </div>
       </div>
     </div>
-        <div class="library-main">
-            <div class="library-content">
-                <div class="library-header">
-                    <div class="library-title">Library</div>
-                    <img class="library-image" src="pic/libraryImage.png" alt="">
+        <div class="website-main" id="library-main">
+            <div class="website-content">
+                <div class="website-header">
+                    <div class="website-title">Library</div>
+                    <img class="website-image" src="pic/libraryImage.png" alt="">
                 </div>
-                <div class="library-container">
-                    <div class="library-list" id="moje-ulubiency">
+                <div class="website-container">
+                    <div class="website-list" id="library-list">
                         <div class="library-grid">
+                                <div class="library-item" data-track-id="P1">
+                                    
+                                    <div class="library-item-child">
+                                        <h4>Rap</h4>
+                                        <img src="pic/playlist1.png" alt="" style="width: 100%">
+                                    </div>
+                                </div>
+                                <div class="library-item" data-track-id="P2">
+                                    
+                                    <div class="library-item-child">
+                                        <h4>Jazz</h4>
+                                        <img src="pic/playlist2.png" alt="" style="width: 100%">
+                                    </div>
+                                </div>
+                                <div class="library-item" data-track-id="P3">
+                                    
+                                    <div class="library-item-child">
+                                        <h4>Pop</h4>
+                                        <img src="pic/playlist3.png" alt="" style="width: 100%">
+                                    </div>
+                                </div>
+                                <div class="library-item" data-track-id="P4">
+                                    
+                                    <div class="library-item-child">
+                                        <h4>Opera</h4>
+                                        <img src="pic/playlist4.png" alt="" style="width: 100%">
+                                    </div>
+                                </div>
+                                <div class="library-item" data-track-id="P5">
+                                    
+                                    <div class="library-item-child">
+                                        <h4>Ballad</h4>
+                                        <img src="pic/playlist5.png" alt="" style="width: 100%">
+                                    </div>
+                                </div>
+                                <div class="library-item" data-track-id="P6">
+                                    
+                                    <div class="library-item-child">
+                                        <h4>Rock</h4>
+                                        <img src="pic/playlist6.png" alt="" style="width: 100%">
+                                    </div>
+                                </div>
+                                <div class="library-item" data-track-id="P7">
+                                    
+                                    <div class="library-item-child">
+                                        <h4>Country</h4>
+                                        <img src="pic/playlist7.png" alt="" style="width: 100%">
+                                    </div>
+                                </div>
+                                <div class="library-item" data-track-id="P8">
+                                    
+                                    <div class="library-item-child">
+                                        <h4>Disco</h4>
+                                        <img src="pic/playlist8.png" alt="" style="width: 100%">
+                                    </div>
+                                </div>
                                 <div class="library-item" data-track-id="P1">
                                     
                                     <div class="library-item-child">
@@ -107,24 +176,24 @@
             </div>
         </div>
 
-    <div class="playlist-main">
-      <div class="playlist-content">
-        <div class="playlist-header"></div>
-        <div class="track-list-container">
-          <ul class="track-list"></ul>
+    <div class="website-main" id="playlist-main">
+      <div class="website-content">
+        <div class="website-header" id="playlist-header"></div>
+        <div class="website-container">
+          <ul class="website-list" id="track-list"></ul>
         </div>
       </div>
     </div>
           
           
-      <div class="favorite-main">
-        <div class="playlist-favorite-content">
-          <div class="playlist-favorite-header">
-            <div class="playlist-favorite-title">Moja Playlista</div>
-            <img class="playlist-favorite-image" src="pic/favoritePlaylist.png" alt="">
+      <div class="website-main" id="favorite-main">
+        <div class="website-content">
+          <div class="website-header">
+            <div class="website-title">Moja Playlista</div>
+            <img class="website-image" src="pic/favoritePlaylist.png" alt="">
           </div>
-          <div class="track-favorite-list-container">
-            <ul class="track-favorite-list"></ul>
+          <div class="website-container">
+            <ul class="website-list" id="favorite-track-list"></ul>
           </div>
         </div>
       </div>

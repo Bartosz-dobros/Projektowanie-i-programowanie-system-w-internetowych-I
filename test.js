@@ -79,20 +79,22 @@ const playlists = {
 
 const favoriteTrackIds = new Set();
 const trackStarsInLibrary = new Map();
-const playlistUl = document.querySelector(".track-list");
-const playlistHeader = document.querySelector(".playlist-header");
-const mainPlaylist = document.querySelector(".playlist-main");
-const listFavorites = document.querySelector(".track-favorite-list");
+const playlistUl = document.getElementById("track-list");
+const playlistHeader = document.getElementById("playlist-header");
+const mainPlaylist = document.getElementById("playlist-main");
+const listFavorites = document.getElementById("favorite-track-list");
+const nav = document.querySelector(".nav-menu");
 
-const mainLibrary = document.querySelector(".library-main");
-const mainPage = document.querySelector(".home-main");
-const mainFavorite = document.querySelector(".favorite-main");
+const mainLibrary = document.getElementById("library-main");
+const mainPage = document.getElementById("home-main");
+const mainFavorite = document.getElementById("favorite-main");
 
 document.getElementById("view-library").onclick = () => {
   mainLibrary.style.display = "block";
   mainPage.style.display = "none";
   mainFavorite.style.display = "none";
   mainPlaylist.style.display = "none";
+  nav.classList.toggle("hide");
 };
 
 document.getElementById("view-home").onclick = () => {
@@ -100,6 +102,7 @@ document.getElementById("view-home").onclick = () => {
   mainPage.style.display = "block";
   mainFavorite.style.display = "none";
   mainPlaylist.style.display = "none";
+  nav.classList.toggle("hide");
 };
 
 document.getElementById("view-favorite").onclick = () => {
@@ -107,9 +110,9 @@ document.getElementById("view-favorite").onclick = () => {
   mainPage.style.display = "none";
   mainFavorite.style.display = "block";
   mainPlaylist.style.display = "none";
+  nav.classList.toggle("hide");
 };
 
-const nav = document.querySelector(".nav-menu");
 document.querySelector(".hamburger-menu").onclick = () => {
   nav.classList.toggle("hide");
 };
@@ -126,13 +129,14 @@ childPlaylist.forEach(cp => {
     mainLibrary.style.display = "none";
     mainPage.style.display = "none";
     mainFavorite.style.display = "none";
+    nav.classList.toggle("hide");
 
     playlistHeader.innerHTML = "";
     const playlistTitle = document.createElement("div");
-    playlistTitle.classList.add("playlist-title");
+    playlistTitle.classList.add("website-title");
     playlistTitle.textContent = searPlaylist.title;
     const playlistImage = document.createElement("img");
-    playlistImage.classList.add("playlist-image");
+    playlistImage.classList.add("website-image");
     playlistImage.src = searPlaylist.cover;
     playlistHeader.appendChild(playlistTitle);
     playlistHeader.appendChild(playlistImage);
@@ -141,7 +145,7 @@ childPlaylist.forEach(cp => {
 
     searPlaylist.tracks.forEach((track, index) => {
       const trackEl = document.createElement("li");
-      trackEl.className = "tracko";
+      trackEl.className = "track";
       trackEl.setAttribute("data-track-id", track.id);
 
       trackEl.innerHTML = `
