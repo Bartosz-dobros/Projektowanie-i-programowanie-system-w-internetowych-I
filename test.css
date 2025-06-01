@@ -215,10 +215,6 @@ a {
   font-size: 1.1rem;
 }
 
-
-
-
-
 /* library */
 
 .website-list .library-grid {
@@ -272,77 +268,6 @@ a {
 
 .library-item-child img:hover {
   transform: scale(1);
-}
-
-/* login register */
-
-.form-container-main {
-  display: flex;
-  justify-content: center;
-}
-
-.form-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 600px;
-  width: 500px;
-  padding: 50px 20px;
-  background-color: var(--body-color);
-  color: var(--search-text);
-  border-radius: 6px;
-}
-
-.login-form {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-}
-
-.form-section {
-  margin: 10px 5px;
-}
-
-.form-section h2 {
-  font-size: 32px;
-}
-
-.form-section .form-section-part {
-  margin-bottom: 15px;
-  display: flex;
-  flex-direction: column;
-}
-
-.form-section-part .login-label {
-  margin-bottom: 5px;
-  font-size: 15px;
-  font-weight: 400;
-}
-
-.form-section-part .login-input {
-  border: 1px solid var(--side-nav);
-  border-radius: 3px;
-  font-size: 15px;
-  font-weight: 200;
-  padding: 10px;
-  width: 100%;
-}
-
-.form-section .login-button {
-  background: var(--side-nav);
-  width: 200px;
-  height: 50px;
-  border: 0;
-  border-radius: 3px;
-  text-transform: uppercase;
-  font-weight: 200;
-  font-size: 18px;
-  color: var(--text-color);
-  padding: 10px;
-  line-height: 20px;
 }
 
 /* playlisty */
