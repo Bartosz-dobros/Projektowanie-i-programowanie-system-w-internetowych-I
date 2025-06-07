@@ -4,11 +4,11 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
   const password = document.getElementById('loginPassword').value;
 
   // Check if username and password are valid
-  if (username === 'admin' && password === 'password') {
+  if (username == '' || password == '') {
     // Successful login
-    alert('Login Successful');
+    alert('Wypełnij wszystkie pola!');
   } else {
     // Invalid login
-    alert('Invalid username or password');
+    alert('Zalogowano pomyślnie!');
   }
 });
