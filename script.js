@@ -192,7 +192,7 @@ childPlaylist.forEach(cp => {
   cp.onclick = function () {
     const parentPlaylist = this.parentElement;
     const key = parentPlaylist.getAttribute("data-track-id");
-    const searPlaylist = playlists[key];
+    const searchPlaylist = playlists[key];
 
     mainPlaylist.style.display = "block";
     mainLibrary.style.display = "none";
@@ -202,16 +202,16 @@ childPlaylist.forEach(cp => {
     playlistHeader.innerHTML = "";
     const playlistTitle = document.createElement("div");
     playlistTitle.classList.add("website-title");
-    playlistTitle.textContent = searPlaylist.title;
+    playlistTitle.textContent = searchPlaylist.title;
     const playlistImage = document.createElement("img");
     playlistImage.classList.add("website-image");
-    playlistImage.src = searPlaylist.cover;
+    playlistImage.src = searchPlaylist.cover;
     playlistHeader.appendChild(playlistTitle);
     playlistHeader.appendChild(playlistImage);
 
     playlistUl.innerHTML = "";
 
-    searPlaylist.tracks.forEach((track, index) => {
+    searchPlaylist.tracks.forEach((track, index) => {
       const trackEl = document.createElement("li");
       trackEl.className = "track";
       trackEl.setAttribute("data-track-id", track.id);
