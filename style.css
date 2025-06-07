@@ -318,6 +318,11 @@ a {
   background-color: var(--nav-color);
 }
 
+.website-list .track.active {
+  color: var(--side-nav);
+  background-color: var(--nav-color);
+}
+
 /* audioplayer */
 
 .audioPlayer {
