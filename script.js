@@ -29,7 +29,7 @@ const playlists = {
     tracks: [
       { id: "Pop1", title: "Cat Walk", artist: "Arulo", music: 'music/Pop/Cat Walk - Arulo.mp3'},
       { id: "Pop2", title: "Classique", artist: "Mixkit", music: 'music/Pop/Classique - Mixkit.mp3'},
-      { id: "Pop3", title: "Crying Sea", artist: "Mixkit", music: 'music/Pop/Crying Sea - Mixkit-.mp3'},
+      { id: "Pop3", title: "Crying Sea", artist: "Mixkit", music: 'music/Pop/Crying  Sea - Mixkit.mp3'},
       { id: "Pop4", title: "Good Time", artist: "Grand_Project", music: 'music/Pop/Good Time - Grand_Project.mp3'},
       { id: "Pop5", title: "Im Still Waitin", artist: "Michael Ramir C", music: 'music/Pop/Im Still Waitin - Michael Ramir C.mp3'},
       { id: "Pop6", title: "Peenzee Otraak", artist: "Eugenio Mininni", music: 'music/Pop/Peenzee Otraak - Eugenio Mininni.mp3'},
@@ -51,7 +51,7 @@ const playlists = {
       { id: "Classical6", title: "Pizzicato", artist: "Léo Delibes", music: 'music/Classical/Pizzicato - Léo Delibes.mp3'},
       { id: "Classical7", title: "Sovereign", artist: "Kevin MacLeod", music: 'music/Classical/Sovereign - Kevin MacLeod .mp3'},
       { id: "Classical8", title: "Swan Lake Op. 20, Act II No. 10", artist: "Tchaikovsky", music: 'music/Classical/Swan Lake Op. 20, Act II No. 10 - Tchaikovsky.mp3'},
-      { id: "Classical9", title: "The Nutcracker Act I, No. 2 (March)", artist: "P.I. Tchaikovsky", music: 'music/Classical/The Nutcracker Act I, No. 2 (March) - P.I. Tchaikovsky .mp3'},
+      { id: "Classical9", title: "The Nutcracker Act I, No. 2 (March)", artist: "P.I. Tchaikovsky", music: 'music/Classical/The Nutcracker Act I, No. 2 March -  P.I. Tchaikovsky .mp3'},
       { id: "Classical10", title: "Toccata and Fugue in D minor BWV", artist: "J.S. Bach", music: 'music/Classical/Toccata and Fugue in D minor BWV - J.S. Bach.mp3'}
     ]
   },
