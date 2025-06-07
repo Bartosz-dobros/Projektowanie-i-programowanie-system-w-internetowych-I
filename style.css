@@ -384,8 +384,7 @@ a {
   }
 
   .library-item-child img {
-    width: 100%;
-    height: auto;
+    height: 150px;
     transform: scale(0.9);
   }
 
@@ -473,8 +472,7 @@ a {
   }
 
   .library-item-child img {
-    width: 100%;
-    height: auto;
+    height: 150px;
     transform: scale(0.9);
   }
 
