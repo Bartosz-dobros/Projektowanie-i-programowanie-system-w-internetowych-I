@@ -1,0 +1,25 @@
+{
+  "firestore": {
+    "database": "(default)",
+    "location": "europe-central2",
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
+  },
+  "hosting": {
+    "public": "dist",
+    "cleanUrls": true,
+    "trailingSlash": false,
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      { "source": "/library",  "destination": "/library.html" },
+      { "source": "/favorite", "destination": "/favorite.html" },
+      { "source": "/login",    "destination": "/login.html" },
+      { "source": "/register", "destination": "/register.html" },
+      { "source": "**",        "destination": "/404.html" }
+    ]
+  }
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Music Website – Library</title>
+
+    <link rel="stylesheet" href="./src/style.css"/>
+    <link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet"/>
+</head>
+<body>
+<header>
+    <nav class="navbar">
+        <div class="page-header">
+            <a href="/"><h1>Music Website</h1></a>
+        </div>
+
+        <div class="hamburger-menu">
+            <i class="bx bx-menu sidebarOpen"></i>
+        </div>
+
+        <div class="nav-menu hide">
+            <a href="/">Home</a>
+            <a href="/library">Library</a>
+            <a href="/favorite">My Favorite</a>
+
+            <div id="auth-area" class="d-flex gap-2 align-items-center"></div>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <div class="website-main" id="library-main">
+        <div class="website-content">
+            <div class="website-header">
+                <div class="website-title">Library</div>
+                <img class="website-image" src="public/pic/libraryImage.png" alt="">
+            </div>
+
+            <div class="website-container">
+                <div id="library-spinner" class="loader"></div>
+                <div class="website-list" id="library-list">
+                    <div class="library-grid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Widok pojedynczej playlisty, wciąż na tej samej stronie -->
+    <div class="website-main" id="playlist-main">
+        <div class="website-content">
+            <div class="website-header" id="playlist-header"></div>
+            <div class="website-container">
+                <ul class="website-list" id="track-list"></ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Odtwarzacz audio (pozwala słuchać w bibliotece i w playliście) -->
+    <div id="player">
+        <audio class="audioPlayer" id="audioPlayer" controls controlsList="nodownload">
+            Twoja przeglądarka nie obsługuje elementu audio.
+        </audio>
+    </div>
+</main>
+
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
