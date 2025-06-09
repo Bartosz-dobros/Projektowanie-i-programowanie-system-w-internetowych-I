@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Music Website – My Favorite</title>
+  <title data-i18n="titleFavorite">Music Website – My Favorite</title>
 
   <link rel="stylesheet" href="./src/style.css"/>
   <link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet"/>
@@ -13,7 +13,7 @@
 <header>
   <nav class="navbar">
     <div class="page-header">
-      <a href="/"><h1>Music Website</h1></a>
+      <a href="/"><h1 data-i18n="siteTitle">Music Website</h1></a>
     </div>
 
     <div class="hamburger-menu">
@@ -21,10 +21,10 @@
     </div>
 
     <div class="nav-menu hide">
-      <a href="/">Home</a>
-      <a href="/library">Library</a>
-      <a href="/favorite">My Favorite</a>
-
+      <button id="lang-toggle" class="btn btn-sm">PL</button>
+      <a href="/" data-i18n="navHome">Home</a>
+      <a href="/library" data-i18n="navLibrary">Library</a>
+      <a href="/favorite" data-i18n="navFavorite">My Favorite</a>
       <div id="auth-area" class="d-flex gap-2 align-items-center"></div>
     </div>
   </nav>
@@ -34,7 +34,7 @@
   <div class="website-main" id="favorite-main">
     <div class="website-content">
       <div class="website-header">
-        <div class="website-title">My Favorite</div>
+        <div class="website-title" data-i18n="favoriteTitle">My Favorite</div>
         <img class="website-image" src="public/pic/favoritePlaylist.png" alt="">
       </div>
 
@@ -46,11 +46,12 @@
 
   <div id="player">
     <audio class="audioPlayer" id="audioPlayer" controls controlsList="nodownload">
-      Twoja przeglądarka nie obsługuje elementu audio.
+      <span data-i18n="audioNotSupported">Your browser does not support the audio element.</span>
     </audio>
   </div>
 </main>
 
 <script type="module" src="./src/main.js"></script>
+<script type="module" src="./src/lang.js"></script>
 </body>
 </html>

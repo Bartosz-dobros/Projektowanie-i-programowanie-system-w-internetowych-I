@@ -1,6 +1,7 @@
 import { auth, db, userFavRef } from './firebase.js';
 import { onAuthStateChanged, signOut } from 'firebase/auth';
-import { setDoc, deleteDoc, onSnapshot, doc } from 'firebase/firestore';
+import { addDoc, collection, serverTimestamp, setDoc, deleteDoc, onSnapshot, doc } from 'firebase/firestore';
+import { currentLang, t, applyTranslations } from './lang.js';
 
 const LOG_PREFIX = '%c[NestPlayer]';
 const LOG_STYLE = 'color:#7b6dff;font-weight:600';
@@ -36,6 +37,7 @@ const state = {
 
 let currentUid = null;
 
+
 const playTrack = src => {
     const player = $('#audioPlayer');
     if (!player) return error('audioPlayer element not found');
@@ -67,16 +69,7 @@ const updateFavoriteOrder = () => {
 
 const saveFavorite = async track => {
     if (!currentUid) return;
-    await setDoc(
-        doc(db, 'users', currentUid, 'favorites', String(track.id)),
-        {
-            id: track.id,
-            title: track.title,
-            artist: track.artist,
-            audio: track.audio,
-            cover: track.cover
-        }
-    );
+    await setDoc(doc(db, 'users', currentUid, 'favorites', String(track.id)), track);
 };
 
 const deleteFavorite = async id => {
@@ -114,10 +107,10 @@ const buildLibraryGrid = () => {
         item.className = 'library-item';
         item.dataset.trackId = key;
         item.innerHTML = `
-            <div class="library-item-child">
-                <h4>${pl.title}</h4>
-                <img src="${pl.cover}" alt="${pl.title}" style="width:100%"/>
-            </div>`;
+      <div class="library-item-child">
+        <h4>${pl.title}</h4>
+        <img src="${pl.cover}" alt="${pl.title}" style="width:100%"/>
+      </div>`;
         ui.libraryGrid.appendChild(item);
     });
     ui.libraryGrid.querySelectorAll('.library-item-child').forEach(child => {
@@ -129,21 +122,21 @@ const openPlaylist = key => {
     const pl = state.playlists[key];
     if (!pl) return error(`Playlist key ${key} not found`);
     ui.playlistHeader.innerHTML = `
-        <div class="website-title">${pl.title}</div>
-        <img class="website-image" src="${pl.cover}" alt="${pl.title}"/>`;
+    <div class="website-title">${pl.title}</div>
+    <img class="website-image" src="${pl.cover}" alt="${pl.title}"/>`;
     ui.playlistList.innerHTML = '';
     pl.tracks.forEach((track, idx) => {
         const li = document.createElement('li');
         li.className = 'track';
         li.dataset.trackId = track.id;
         li.innerHTML = `
-            <div class="track-number">${idx + 1}</div>
-            <button class="play-button" onclick="playTrack('${track.audio}')">▶</button>
-            <div class="track-info">
-                <h3>${track.title}</h3>
-                <p>${track.artist}</p>
-            </div>
-            <span class="track-star">★</span>`;
+      <div class="track-number">${idx + 1}</div>
+      <button class="play-button" onclick="playTrack('${track.audio}')">▶</button>
+      <div class="track-info">
+        <h3>${track.title}</h3>
+        <p>${track.artist}</p>
+      </div>
+      <span class="track-star">★</span>`;
         const star = li.querySelector('.track-star');
         state.starMap.set(track.id, star);
         star.onclick = () => addFavorite(track, li, star);
@@ -154,7 +147,6 @@ const openPlaylist = key => {
 
 const fetchPlaylists = async () => {
     log('Fetching playlists from Jamendo...');
-
     const spinner = document.getElementById('library-spinner');
     if (spinner) spinner.style.display = 'block';
 
@@ -164,7 +156,6 @@ const fetchPlaylists = async () => {
         if (!data.results?.length) throw new Error('No albums returned');
 
         state.playlists = {};
-
         for (let i = 0; i < data.results.length; i++) {
             const album = data.results[i];
             const tracksRes = await fetch(`https://api.jamendo.com/v3.0/tracks/?client_id=8740c01b&album_id=${album.id}&format=json&limit=5`);
@@ -201,13 +192,13 @@ const listenUserFavorites = uid => {
             li.className = 'track';
             li.dataset.trackId = t.id;
             li.innerHTML = `
-                <div class="track-number">-</div>
-                <button class="play-button" onclick="playTrack('${t.audio}')">▶</button>
-                <div class="track-info">
-                    <h3>${t.title}</h3>
-                    <p>${t.artist}</p>
-                </div>
-                <span class="track-star active">★</span>`;
+        <div class="track-number">-</div>
+        <button class="play-button" onclick="playTrack('${t.audio}')">▶</button>
+        <div class="track-info">
+          <h3>${t.title}</h3>
+          <p>${t.artist}</p>
+        </div>
+        <span class="track-star active">★</span>`;
             li.querySelector('.track-star').onclick = () => removeFavorite(t.id, li);
             ui.favoriteList?.appendChild(li);
         }
@@ -215,30 +206,27 @@ const listenUserFavorites = uid => {
     });
 };
 
-const protectRoutes = (user) => {
+const protectRoutes = user => {
     const path = location.pathname;
     const isPublic =
         path.endsWith('/') ||
         path.endsWith('/index.html') ||
         path.endsWith('/login.html') ||
         path.endsWith('/register.html');
-
     if (!user && !isPublic) {
         log('Redirecting unauthenticated user to login');
         location.href = '/login.html';
     }
 };
 
-
 window.addEventListener('DOMContentLoaded', () => {
     onAuthStateChanged(auth, user => {
         protectRoutes(user);
-
         if (!ui.authArea) return;
 
         if (user) {
             if (!user.emailVerified) {
-                alert('Potwierdź swój e-mail przed korzystaniem z aplikacji.');
+                alert(t('verify'));
                 signOut(auth).then(() => {
                     location.href = 'login.html';
                 });
@@ -249,22 +237,29 @@ window.addEventListener('DOMContentLoaded', () => {
             listenUserFavorites(user.uid);
             const name = user.displayName || user.email;
             ui.authArea.innerHTML = `
-      <span class="text-white me-2">Zalogowano jako: <strong>${name}</strong></span>
-      <button class="btn btn-outline-light btn-sm" id="logout-btn">Wyloguj</button>`;
+  <span class="text-white me-2" data-i18n="loggedInAs"></span>
+  <strong id="user-name" class="text-white me-2">${name}</strong>
+  <button class="btn btn-outline-light btn-sm" id="logout-btn" data-i18n="logout">Wyloguj</button>
+`;
+            applyTranslations(currentLang);
             $('#logout-btn').onclick = () => signOut(auth).then(() => location.href = 'login.html');
         } else {
             currentUid = null;
             if (ui.favoriteList) ui.favoriteList.innerHTML = '';
             state.favoriteIds.clear();
             ui.authArea.innerHTML = `
-      <a class="btn btn-outline-light btn-sm" href="../login.html">Logowanie</a>
-      <a class="btn btn-primary btn-sm" href="../register.html">Rejestracja</a>`;
+    <a class="btn btn-outline-light btn-sm" href="/login" data-i18n="login">Logowanie</a>
+    <a class="btn btn-primary btn-sm" href="/register" data-i18n="register">Rejestracja</a>`;
+            applyTranslations(currentLang);
         }
+    });
+
+    $('.hamburger-menu')?.addEventListener('click', () => {
+        ui.nav?.classList.toggle('hide');
     });
 
     if (page.library) {
         fetchPlaylists();
-        $('.hamburger-menu')?.addEventListener('click', () => ui.nav.classList.toggle('hide'));
         showLibraryView('library');
     }
 });

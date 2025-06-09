@@ -1,42 +1,77 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Logowanie</title>
+  <title data-i18n="titleLogin">Login</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
 </head>
 <body style="background-color: #1d0a43;">
 
 <header class="text-center py-4">
   <a href="/" class="text-white text-decoration-none">
-    <h1 class="display-4 text-white fw-bold">Music Website</h1>
+    <h1 class="display-4 text-white fw-bold" data-i18n="siteTitle">Music Website</h1>
   </a>
 </header>
 
 <main class="d-flex justify-content-center align-items-center" style="min-height: 400px; padding-top: 40px;">
   <div class="card p-4" style="max-width: 700px; width: 100%; background-color: #baa4e7; color: #000;">
     <form id="loginForm" class="needs-validation" novalidate>
-      <h2 class="mb-4 text-center fs-2">Sign In</h2>
+      <h2 class="mb-4 text-center fs-2" data-i18n="loginHeading">Sign In</h2>
 
       <div class="mb-3">
-        <label for="email" class="form-label">Nazwa użytkownika</label>
-        <input type="email" class="form-control" style="border-color: #1d0a43;" id="email" required>
-        <div class="invalid-feedback">Wprowadź nazwę użytkownika.</div>
+        <label for="email" class="form-label" data-i18n="loginUsernameLabel">Email</label>
+        <input
+                type="email"
+                class="form-control"
+                style="border-color: #1d0a43;"
+                id="email"
+                required
+                data-i18n="loginUsernamePlaceholder"
+                data-i18n-attr="placeholder"
+                placeholder="Email"
+        >
+        <div class="invalid-feedback" data-i18n="loginUsernameRequired">Please enter your email.</div>
       </div>
 
       <div class="mb-4">
-        <label for="password" class="form-label">Hasło</label>
-        <input type="password" class="form-control" style="border-color: #1d0a43;" id="password" required>
-        <div class="invalid-feedback">Wprowadź hasło.</div>
+        <label for="password" class="form-label" data-i18n="loginPasswordLabel">Password</label>
+        <input
+                type="password"
+                class="form-control"
+                style="border-color: #1d0a43;"
+                id="password"
+                required
+                data-i18n="loginPasswordPlaceholder"
+                data-i18n-attr="placeholder"
+                placeholder="Password"
+        >
+        <div class="invalid-feedback" data-i18n="loginPasswordRequired">Please enter your password.</div>
       </div>
 
-      <button type="submit" class="btn w-100 text-white fw-semibold fs-5" style="background-color: #6a2be7;">Zaloguj się</button>
+      <button
+              type="submit"
+              class="btn w-100 text-white fw-semibold fs-5"
+              style="background-color: #6a2be7;"
+              data-i18n="loginButton"
+      >
+        Log In
+      </button>
+
+      <a
+              href="/register"
+              class="btn btn-link text-center text-decoration-none d-block mt-3"
+              style="color: #1d0a43;"
+              data-i18n="loginNoAccount"
+      >
+        I don't have an account
+      </a>
     </form>
   </div>
 </main>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+<script type="module" src="./src/lang.js"></script>
 <script type="module" src="./src/login.js"></script>
 </body>
 </html>

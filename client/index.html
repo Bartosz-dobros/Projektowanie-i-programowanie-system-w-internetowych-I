@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Music Website – Home</title>
+  <title data-i18n="titleHome">Music Website – Home</title>
 
   <link rel="stylesheet" href="./src/style.css"/>
   <link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet"/>
@@ -13,15 +13,19 @@
 <header>
   <nav class="navbar">
     <div class="page-header">
-      <a href="/"><h1>Music Website</h1></a>
+      <a href="/"><h1 data-i18n="siteTitle">Music Website</h1></a>
     </div>
+
     <div class="hamburger-menu">
       <i class="bx bx-menu sidebarOpen"></i>
     </div>
+
     <div class="nav-menu hide">
-      <a href="/">Home</a>
-      <a href="/library">Library</a>
-      <a href="/favorite">My Favorite</a>
+      <button id="lang-toggle" class="btn btn-sm">PL</button>
+      <a href="/"        data-i18n="navHome">Home</a>
+      <a href="/library" data-i18n="navLibrary">Library</a>
+      <a href="/favorite" data-i18n="navFavorite">My Favorite</a>
+
       <div id="auth-area" class="d-flex gap-2 align-items-center"></div>
     </div>
   </nav>
@@ -30,26 +34,34 @@
 <main>
   <div class="website-main" id="home-main">
     <div class="website-content">
+
       <div class="website-header">
-        <div class="website-title">Welcome</div>
+        <div class="website-title" data-i18n="homeWelcomeTitle">Welcome</div>
         <img class="website-image" src="public/pic/homeSection.png" alt="">
       </div>
 
       <div class="website-container">
         <div class="home-container-welcome">
-          <h2>Witajcie w Music Website!</h2>
-          <p>Ta strona umożliwia słuchanie muzyki o każdej porze dnia.
-            Utwory dostępne są w różnych playlistach naszej biblioteki.
-            Można również dodawać wybrane piosenki do playlisty ulubionych, jak i usuwać je stamtąd.
-            Zachęcamy do zalogowania się, a jeśli nie masz jeszcze konta to do rejestracji.
+          <h2 data-i18n="homeHeading">Welcome to Music Website!</h2>
+
+          <p data-i18n="homeParagraph">
+            This site allows you to listen to music at any time of day.
+            Tracks are available in various playlists in our library.
+            You can also add selected songs to your favorites playlist, or remove them from it.
+            We encourage you to log in, and if you don't have an account yet, please register.
           </p>
-          <p class="authors">Strona autorstwa: Maksym Wilk, Bartosz Dobroś, Michał Żmuda. &copy; Wszelkie prawa zastrzeżone</p>
+
+          <p class="authors" data-i18n="homeAuthors">
+            Website created by: Maksym Wilk, Bartosz Dobroś, Michał Żmuda. &copy; All rights reserved.
+          </p>
         </div>
       </div>
+
     </div>
   </div>
 </main>
 
+<script type="module" src="./src/lang.js"></script>
 <script type="module" src="./src/main.js"></script>
 </body>
 </html>
